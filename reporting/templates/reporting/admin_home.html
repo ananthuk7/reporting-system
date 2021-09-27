@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+<div class="row">
+ <div class="col-lg-3">
+  <a href="{%url 'adduser'%}">
+   <div class="box1">
+    User Management
+   </div>
+  </a>
+ </div>
+ <div class="col-lg-3">
+  <a href="{%url 'addcourse'%}">
+   <div class="box1">
+    Course Management
+   </div>
+  </a>
+ </div>
+ <div class="col-lg-3">
+  <a href="{%url 'addbatch'%}">
+   <div class="box1">
+    Batch Management
+   </div>
+  </a>
+ </div>
+ <div class="col-lg-3">
+  <a href="{%url 'listtimesheet'%}">
+   <div class="box1">
+    Timeshedule Management
+   </div>
+  </a>
+ </div>
+</div>
+
+ {%endblock%}

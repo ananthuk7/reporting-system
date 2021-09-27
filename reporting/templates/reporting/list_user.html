@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <table class="table">
+                <tr>
+                    <td>Username</td>
+                    <td>role</td>
+                    <td>action</td>
+                </tr>
+                {%for user in object_list%}
+                <tr>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
+                    <td><a href="{%url 'edituser' user.id%}" class="btn btn-warning">edit</a></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+
+
+ {%endblock%}

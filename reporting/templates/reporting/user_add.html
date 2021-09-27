@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+            <form action="" method="post" class="mx-auto">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-info">Add User</button>
+            </form>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-7">
+            <table class="table">
+                <tr>
+                    <td>Username</td>
+                    <td>role</td>
+                    <td>action</td>
+                </tr>
+                {%for user in users%}
+                <tr>
+                    <td>{{user.email}}</td>
+                    <td>{{user.role}}</td>
+                    <td><a href="{%url 'edituser' user.id%}" class="btn btn-warning">edit</a></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

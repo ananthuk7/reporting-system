@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+<div class="row">
+ <div class="col-lg-3">
+  <a href="{%url 'timesheet'%}">
+   <div class="box1">
+     Add Timeshedule
+   </div>
+  </a>
+ </div>
+ <div class="col-lg-3">
+  <a href="{%url 'listtimesheet'%}">
+   <div class="box1">
+     List Timeshedule
+   </div>
+  </a>
+ </div>
+</div>
+
+ {%endblock%}

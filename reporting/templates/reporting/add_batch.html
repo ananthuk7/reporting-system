@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+             <form action="" method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-success">Add Batch</button>
+            </form>
+        </div>
+        <div class="col-lg-1">
+
+        </div>
+        <div class="col-lg-7">
+            <table class="table">
+                <tr>
+                    <td>Courses</td>
+                    <td>Batch</td>
+                    <td>action</td>
+                </tr>
+                {%for batch in batches%}
+                <tr>
+                    <td>{{batch.courses}}</td>
+                    <td>{{batch.batch_name}}</td>
+                    <td><a href="{%url 'editbatch' batch.id%}" class="btn btn-warning">edit</a></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

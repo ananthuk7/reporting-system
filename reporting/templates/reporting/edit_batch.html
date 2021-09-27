@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+<form action="" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button type="submit">Add User</button>
+</form>
+
+
+{%endblock%}

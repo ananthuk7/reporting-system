@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%extends 'reporting/main.html'%}
+
+{%block block_body%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <table class="table">
+                <tr>
+                    <td>Courses</td>
+                    <td>Batch</td>
+                    <td>action</td>
+                </tr>
+                {%for batch in object_list%}
+                <tr>
+                    <td>{{batch.courses}}</td>
+                    <td>{{batch.batch_name}}</td>
+                    <td><a href="{%url 'editbatch' batch.id%}" class="btn btn-warning">edit</a></td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+
+
+
+{%endblock%}
